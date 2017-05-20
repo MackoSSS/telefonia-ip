@@ -1,0 +1,331 @@
+﻿<Window x:Name="WINDOW_communicator" x:Class="TIPvol1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Communicator" Height="720" Width="1280" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}">
+    <Grid x:Name="GRID_main" HorizontalAlignment="Left" Height="720" Margin="0" VerticalAlignment="Top" Width="1280">
+        <Grid x:Name="GRID_splashscreen" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1280" Height="720" Visibility="Hidden">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.75">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="-20" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF1F1F1F" Offset="0.391"/>
+                    <GradientStop Color="#B2044868" Offset="0.997"/>
+                    <GradientStop Color="#B6094967"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Label Content="Komunikator" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Segoe UI Light" FontSize="88"/>
+            <Button x:Name="btn_LogIn" Content="Zaloguj się" HorizontalAlignment="Left" Margin="350,555,0,0" VerticalAlignment="Top" Width="250" FontFamily="Segoe UI Light" FontSize="26" Height="40" BorderBrush="{x:Null}" Background="White" Click="btn_LogIn_Click"/>
+            <Button x:Name="btn_RegistryShow" Content="Utwórz konto" HorizontalAlignment="Right" Margin="0,555,350,0" VerticalAlignment="Top" Width="250" FontFamily="Segoe UI Light" FontSize="26" Height="40" BorderBrush="{x:Null}" Background="White" Click="btn_RegistryShow_Click"/>
+            <TextBox x:Name="textbox_login" HorizontalAlignment="Left" Height="45" Margin="500,300,0,0" TextWrapping="Wrap" Text="login" VerticalAlignment="Top" Width="430" FontSize="26" FontFamily="Segoe UI Light" SelectionBrush="#FFA4A4A4" Foreground="White" Background="#19000000" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="textbox_domain" HorizontalAlignment="Left" Height="45" Margin="500,420,0,0" TextWrapping="Wrap" Text="192.168.1.1" VerticalAlignment="Top" Width="430" FontSize="26" FontFamily="Segoe UI Light" SelectionBrush="#FFA4A4A4" Foreground="White" Background="#19000000" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="Login" HorizontalAlignment="Left" Margin="350,300,0,0" VerticalAlignment="Top" Height="45" Width="145" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <Label Content="Hasło" HorizontalAlignment="Left" Margin="350,360,0,0" VerticalAlignment="Top" Height="45" Width="145" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <Label Content="Domena" HorizontalAlignment="Left" Margin="350,420,0,0" VerticalAlignment="Top" Height="45" Width="145" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <PasswordBox x:Name="passwordbox" HorizontalAlignment="Left" Margin="500,360,0,0" VerticalAlignment="Top" Width="430" Height="45" FontFamily="Segoe UI Light" FontSize="26" SelectionBrush="#FFA4A4A4" Foreground="White" Background="#19000000" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Password="password"/>
+            <Grid x:Name="GRID_NewAccount" HorizontalAlignment="Left" Height="215" Margin="350,483,0,0" VerticalAlignment="Top" Width="580" Visibility="Hidden">
+                <TextBox x:Name="textbox_name" HorizontalAlignment="Left" Height="45" Margin="145,0,0,0" TextWrapping="Wrap" Text="imię" VerticalAlignment="Top" Width="430" FontSize="26" FontFamily="Segoe UI Light" SelectionBrush="#FFA4A4A4" Foreground="White" Background="#19000000" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Content="Imię" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="145" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+                <Label Content="Nazwisko" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="145" FontFamily="Segoe UI Light" FontSize="26" Foreground="White" Margin="0,60,0,0"/>
+                <Label Content="Płeć" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="145" FontFamily="Segoe UI Light" FontSize="26" Foreground="White" Margin="0,120,0,0"/>
+                <Button x:Name="btn_Registry_Male" HorizontalAlignment="Right" Margin="0,120,40,0" VerticalAlignment="Top" Width="75" BorderBrush="{x:Null}" Height="45">
+                    <Button.Background>
+                        <SolidColorBrush Color="White" Opacity="1E-05"/>
+                    </Button.Background>
+                    <fa:FontAwesome Icon="Male" FontSize="26" Foreground="White"/>
+                </Button>
+                <Button x:Name="btn_Registry_Female" HorizontalAlignment="Left" Margin="205,120,0,0" VerticalAlignment="Top" Width="75" BorderBrush="{x:Null}" Height="45">
+                    <Button.Background>
+                        <SolidColorBrush Color="White" Opacity="1E-05"/>
+                    </Button.Background>
+                    <fa:FontAwesome Icon="Female" FontSize="26" Foreground="White"/>
+                </Button>
+                <TextBox x:Name="textbox_surname" HorizontalAlignment="Left" Height="45" Margin="145,60,0,0" TextWrapping="Wrap" Text="nazwisko" VerticalAlignment="Top" Width="430" FontSize="26" FontFamily="Segoe UI Light" SelectionBrush="#FFA4A4A4" Foreground="White" Background="#19000000" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Button x:Name="btn_NewAccount" Content="Utwórz konto" HorizontalAlignment="Center" Margin="330,0,0,0" VerticalAlignment="Bottom" Width="250" FontFamily="Segoe UI Light" FontSize="26" Height="40" BorderBrush="{x:Null}" Background="White" Click="btn_NewAccount_Click"/>
+                <Button x:Name="btn_NewAccountCancel" Content="Utwórz konto" HorizontalAlignment="Center" Margin="0,0,330,0" VerticalAlignment="Bottom" Width="250" FontFamily="Segoe UI Light" FontSize="26" Height="40" BorderBrush="{x:Null}" Background="White" Click="btn_NewAccountCancel_Click"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="GRID_background" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="880" Background="#FF2E2E2E">
+            <Label x:Name="label_welcome" Content="Witaj + Username + !" HorizontalAlignment="Left" Margin="325,323,0,323" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI Light" FontSize="48" Width="545" Visibility="Hidden"/>
+        </Grid>
+        <Grid x:Name="GRID_Contacts" HorizontalAlignment="Right" Height="720" Margin="0" VerticalAlignment="Top" Width="400" RenderTransformOrigin="2.3,-3.355">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.75">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="-20" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF1F1F1F" Offset="0.391"/>
+                    <GradientStop Color="#B2044868" Offset="0.997"/>
+                    <GradientStop Color="#B6094967"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Label x:Name="label_contacts" Content="Kontakty" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" FontFamily="Segoe UI Light" Height="58"/>
+            <ListBox x:Name="listbox_contacts" HorizontalAlignment="Left" Height="597" Margin="10,108,0,0" VerticalAlignment="Top" Width="380" Foreground="White" BorderBrush="{x:Null}" Background="{x:Null}" MouseDoubleClick="listbox_contacts_MouseDoubleClick">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Width="380" Margin="0,2">
+                            <fa:FontAwesome Icon="UserCircleOutline" Width="80" FontSize="20" Foreground="White"/>
+                            <Label x:Name="Login" Content="{Binding Contact_Login}" Width="290" HorizontalAlignment="Left" Margin="10,0,0,0" FontFamily="Segoe UI Light" FontSize="26"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button x:Name="btn_AddContact" Content="+" HorizontalAlignment="Left" Margin="332,50,0,0" VerticalAlignment="Top" Width="58" FontFamily="Segoe UI Light" Height="58" FontSize="48" Padding="1,-9,1,15" BorderBrush="{x:Null}" Foreground="White" Click="btn_AddContact_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="White" Opacity="1E-05"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <StackPanel x:Name="stackpanel_Menu" HorizontalAlignment="Left" Height="670" Margin="5,40,0,0" VerticalAlignment="Top" Width="250">
+            <Button x:Name="btn_ShowHideDetails" Width="75" HorizontalAlignment="Left" Height="75" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="btn_ShowHideDetails_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="1E-05"/>
+                </Button.Background>
+                <fa:FontAwesome Icon="Bars" Foreground="White" FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <Button x:Name="btn_profile" Width="250" HorizontalAlignment="Left" Height="75" BorderBrush="{x:Null}" Click="btn_profile_Click" Margin="0,5,0,0">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid Width="250" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <fa:FontAwesome Icon="UserCircleOutline" Foreground="White" FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="27,0,0,0"/>
+                    <Label Content="Profil" FontFamily="Segoe UI Light" FontSize="20" VerticalContentAlignment="Center" Margin="75,0,0,0" Foreground="White"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btn_connectionstatus" Width="250" Height="75" Margin="0,5,0,0" HorizontalAlignment="Left" BorderBrush="{x:Null}" Click="btn_connectionstatus_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="75">
+                    <fa:FontAwesome Icon="Connectdevelop" Foreground="White" FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="27,0,0,0"/>
+                    <Label Content="Stan połączenia" FontFamily="Segoe UI Light" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="75,0,0,0"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btn_callhistory" Width="250" Height="75" Margin="0,5,0,0" HorizontalAlignment="Left" BorderBrush="{x:Null}" Click="btn_callhistory_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="75">
+                    <fa:FontAwesome Icon="Archive" Foreground="White" FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="27,0,0,0"/>
+                    <Label Content="Historia połączeń" FontFamily="Segoe UI Light" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="75,0,0,0"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btn_about" Width="250" Height="75" Margin="0,5,0,0" HorizontalAlignment="Left" BorderBrush="{x:Null}" Click="btn_about_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid Width="250" Height="75" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <fa:FontAwesome Icon="InfoCircle" Foreground="White" FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="27,0,0,0"/>
+                    <Label VerticalAlignment="Center" HorizontalAlignment="Left" Margin="75,0,0,0" Content="O aplikacji" FontSize="20" FontFamily="Segoe UI Light" Foreground="White"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btn_logout" Width="250" Height="75" Margin="0,5,0,0" HorizontalAlignment="Left" BorderBrush="{x:Null}" Click="btn_logout_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid Width="250" Height="75" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <fa:FontAwesome Icon="SignOut" Foreground="White" FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="27,0,0,0"/>
+                    <Label Content="Wyloguj" Foreground="White" FontFamily="Segoe UI Light" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="75,0,0,0"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+        <Border x:Name="border_ShowHideDetails" BorderThickness="1" HorizontalAlignment="Left" Height="490" Margin="80,30,0,0" VerticalAlignment="Top" Width="231" Background="#FF2E2E2E" BorderBrush="#FF2E2E2E"/>
+        <Grid x:Name="GRID_Call" HorizontalAlignment="Left" Height="670" Margin="310,40,0,0" VerticalAlignment="Top" Width="565">
+            <Button x:Name="btn_Call_Answer" HorizontalAlignment="Center" Margin="0,0,200,100" VerticalAlignment="Bottom" Width="75" Height="75" BorderBrush="{x:Null}" Click="btn_Call_Answer_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="White" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid Height="75" Width="75" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse Width="70" Height="70" Stroke="#FF439924" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <fa:FontAwesome Icon="Phone" FontSize="26" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btn_Call_HangUp" HorizontalAlignment="Center" Margin="200,0,0,100" VerticalAlignment="Bottom" Width="75" BorderBrush="{x:Null}" Click="btn_Call_HangUp_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="White" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid Height="75" Width="75" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse Width="70" Height="70" Stroke="#FF992424" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <fa:FontAwesome Icon="Phone" FontSize="26" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <fa:FontAwesome.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="135"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </fa:FontAwesome.RenderTransform>
+                    </fa:FontAwesome>
+                </Grid>
+            </Button>
+            <Button x:Name="btn_Call_Hang" HorizontalAlignment="Center" Margin="0,0,100,180" VerticalAlignment="Bottom" Width="76" BorderBrush="{x:Null}" Visibility="Hidden" Click="btn_Call_Hang_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="White" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid Height="75" Width="75" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse Width="70" Height="70" Stroke="#FF044868" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <fa:FontAwesome Icon="Pause" FontSize="26" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btn_Call_MuteMicro" HorizontalAlignment="Center" Margin="100,0,0,180" VerticalAlignment="Bottom" Width="75" BorderBrush="{x:Null}" Visibility="Hidden" Click="btn_Call_MuteMicro_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="White" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid Height="75" Width="75" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse Width="70" Height="70" Stroke="#FF044868" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <fa:FontAwesome Icon="MicrophoneSlash" FontSize="26" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btn_Call_UnmuteMicro" HorizontalAlignment="Center" Margin="295,0,195,180" VerticalAlignment="Bottom" Width="75" BorderBrush="{x:Null}" Visibility="Hidden" Click="btn_Call_UnmuteMicro_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="White" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid Height="75" Width="75" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse Width="70" Height="70" Stroke="#FF044868" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <fa:FontAwesome Icon="Microphone" FontSize="26" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btn_Call_Volume" HorizontalAlignment="Center" Margin="200,0,0,100" VerticalAlignment="Bottom" Width="75" BorderBrush="{x:Null}" Visibility="Hidden" Click="btn_Call_Volume_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="White" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid Height="75" Width="75" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse Width="70" Height="70" Stroke="#FF044868" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <fa:FontAwesome Icon="VolumeDown" FontSize="26" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <Label x:Name="label_IncommingCallContactName" Content="Label + dzwoni..." HorizontalAlignment="Center" Margin="0,0,0,150" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI Light" FontSize="48"/>
+            <Label x:Name="label_CallDuration" Content="5:34" HorizontalAlignment="Right" Margin="0,100,100,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <Slider x:Name="slider_Volume" HorizontalAlignment="Center" Margin="0,0,0,50" VerticalAlignment="Bottom" Width="280" Visibility="Hidden" ValueChanged="slider_Volume_ValueChanged"/>
+        </Grid>
+        <Grid x:Name="GRID_Status" HorizontalAlignment="Left" Height="470" Margin="81,40,0,0" VerticalAlignment="Top" Width="229" Background="#B2022E44">
+            <Label x:Name="label_status" Content="Stan" HorizontalAlignment="Left" Margin="58,10,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" FontFamily="Segoe UI Light"/>
+            <Button x:Name="btn_HideStatus" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="45" Height="40" BorderBrush="{x:Null}" Click="btn_HideStatus_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="#FFDDDDDD" Opacity="1E-05"/>
+                </Button.Background>
+                <fa:FontAwesome Icon="ChevronLeft" FontSize="16" Foreground="White"/>
+            </Button>
+            <Label x:Name="label_status_Copy" Content="połączenia" HorizontalAlignment="Left" Margin="58,68,0,0" VerticalAlignment="Top" FontSize="30" Foreground="White" FontFamily="Segoe UI Light"/>
+            <ListBox x:Name="ListPol" HorizontalAlignment="Left" Height="337" Margin="10,123,0,0" VerticalAlignment="Top" Width="209"/>
+        </Grid>
+        <Border x:Name="border_SelectedGrid" BorderBrush="#FF04547C" BorderThickness="1" HorizontalAlignment="Left" Height="75" Margin="0,40,0,0" VerticalAlignment="Top" Width="2"/>
+        <Grid x:Name="GRID_Profile" HorizontalAlignment="Left" Height="670" Margin="310,40,0,0" VerticalAlignment="Top" Width="565" Visibility="Hidden">
+            <Label x:Name="label_profile" Content="Profil" HorizontalAlignment="Left" Margin="58,10,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" FontFamily="Segoe UI Light" Height="58"/>
+            <Label Content="Login" HorizontalAlignment="Left" Margin="31,100,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <Label Content="Płeć" HorizontalAlignment="Left" Margin="31,325,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <Label Content="Imię" HorizontalAlignment="Left" Margin="31,175,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="31,250,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <Label x:Name="label_login" Content="Login" HorizontalAlignment="Left" Margin="175,100,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <Label x:Name="label_Name" Content="Login" HorizontalAlignment="Left" Margin="175,175,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <Label x:Name="label_Surname" Content="Login" HorizontalAlignment="Left" Margin="175,250,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <Label x:Name="label_Sex" Content="Login" HorizontalAlignment="Left" Margin="175,325,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <Button x:Name="btn_CallTo" HorizontalAlignment="Center" Margin="145,0,345,100" VerticalAlignment="Bottom" Width="75" Height="75" BorderBrush="{x:Null}" Click="btn_CallTo_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="White" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid Height="75" Width="75" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse Width="70" Height="70" Stroke="#FF439924" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <fa:FontAwesome Icon="Phone" FontSize="26" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btn_DeleteContact" HorizontalAlignment="Center" Margin="145,0,0,100" VerticalAlignment="Bottom" Width="75" Height="75" BorderBrush="{x:Null}" Click="btn_DeleteContact_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="White" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid Height="75" Width="75" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse Width="70" Height="70" Stroke="#FF044868" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <fa:FontAwesome Icon="UserTimes" FontSize="26" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btn_ContactsBack" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="45" Height="40" BorderBrush="{x:Null}" Click="btn_ContactsBack_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="#FFDDDDDD" Opacity="1E-05"/>
+                </Button.Background>
+                <fa:FontAwesome Icon="ChevronLeft" FontSize="16" Foreground="White"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="GRID_CallHistory" HorizontalAlignment="Left" Height="670" Margin="310,40,0,0" VerticalAlignment="Top" Width="565" Visibility="Hidden">
+            <Label x:Name="label_callhistory" Content="Historia połączeń" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" FontFamily="Segoe UI Light" Height="58"/>
+            <Label Content="Połączenia wychodzące" HorizontalAlignment="Left" Margin="31,175,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <Label Content="Połączenia przychodzące" HorizontalAlignment="Left" Margin="31,100,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+            <ListBox x:Name="listbox_CallHistory" HorizontalAlignment="Left" Height="100" Margin="127,320,0,0" VerticalAlignment="Top" Width="100"/>
+        </Grid>
+        <Grid x:Name="GRID_About" HorizontalAlignment="Left" Height="670" Margin="310,40,0,0" VerticalAlignment="Top" Width="565" Visibility="Hidden">
+            <Label x:Name="label_about" Content="O aplikacji" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" FontFamily="Segoe UI Light" Height="58"/>
+            <Label Content="lorem ipsum" HorizontalAlignment="Left" Margin="31,100,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="26" Foreground="White"/>
+        </Grid>
+        <Grid x:Name="GRID_FloatingCall" HorizontalAlignment="Left" Height="185" Margin="10,525,0,0" VerticalAlignment="Top" Width="355" Visibility="Hidden">
+            <Grid.Background>
+                <SolidColorBrush Color="#B2022E44" Opacity="0.5"/>
+            </Grid.Background>
+            <Label x:Name="label_Floating_IncommingCallContactName" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Segoe UI Light" FontSize="26"/>
+            <Button x:Name="btn_Floating_Call_Answer" HorizontalAlignment="Center" Margin="0,0,145,15" VerticalAlignment="Bottom" Width="75" Height="75" BorderBrush="{x:Null}" Click="btn_Call_Answer_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="White" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid Height="75" Width="75" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse Width="70" Height="70" Stroke="#FF439924" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <fa:FontAwesome Icon="Phone" FontSize="26" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btn_Floating_Call_HangUp" HorizontalAlignment="Center" Margin="145,0,0,15" VerticalAlignment="Bottom" Width="75" BorderBrush="{x:Null}" Click="btn_Call_HangUp_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="White" Opacity="1E-05"/>
+                </Button.Background>
+                <Grid Height="75" Width="75" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse Width="70" Height="70" Stroke="#FF992424" StrokeThickness="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <fa:FontAwesome Icon="Phone" FontSize="26" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <fa:FontAwesome.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="135"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </fa:FontAwesome.RenderTransform>
+                    </fa:FontAwesome>
+                </Grid>
+            </Button>
+        </Grid>
+        <Grid x:Name="GRID_dock" HorizontalAlignment="Left" Height="30" Margin="0" VerticalAlignment="Top" Width="1280" Background="#33000000">
+            <Button x:Name="btn_close" Content="X" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Width="50" Foreground="White" BorderBrush="{x:Null}" Click="btn_close_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="1E-05"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btn_minimize" Content="_" HorizontalAlignment="Right" Margin="0,5,65,5" VerticalAlignment="Center" Width="50" Foreground="White" BorderBrush="{x:Null}" FontSize="20" Padding="1,-10,1,1" Click="btn_minimize_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="1E-05"/>
+                </Button.Background>
+            </Button>
+            <TextBlock x:Name="textblock_AppName" HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Text="Communicator" VerticalAlignment="Center" Foreground="White" FontSize="20" FontFamily="Segoe UI Light"/>
+        </Grid>
+        <Grid x:Name="GRID_AddContacts" HorizontalAlignment="Left" Height="670" Margin="310,40,0,0" VerticalAlignment="Top" Width="565" Visibility="Hidden">
+            <Label x:Name="label_addcontacts" Content="Dodaj kontakty" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" FontFamily="Segoe UI Light" Height="58"/>
+            <TextBox x:Name="textbox_SearchContacts" HorizontalAlignment="Left" Height="45" Margin="70,100,0,0" TextWrapping="Wrap" Text="Szukaj znajomych" VerticalAlignment="Top" Width="470" FontFamily="Segoe UI Light" FontSize="26" VerticalContentAlignment="Center" SelectionBrush="#FF979797" BorderBrush="{x:Null}" BorderThickness="0" KeyDown="textbox_SearchContacts_KeyDown"/>
+            <fa:FontAwesome Icon="Search" FontSize="26" Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="25,100,0,0" Height="45" VerticalAlignment="Top" Width="45"/>
+            <ListBox x:Name="listbox_SearchContacts" HorizontalAlignment="Left" Height="520" Margin="25,150,0,0" VerticalAlignment="Top" Width="515" MouseDoubleClick="listbox_SearchContacts_MouseDoubleClick" Background="{x:Null}" BorderBrush="{x:Null}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Width="515">
+                            <fa:FontAwesome Icon="UserCircleOutline" FontSize="20" Foreground="White" Width="80"/>
+                            <Label Content="{Binding Contact_Login}" FontFamily="Segue UI Light" FontSize="26" Foreground="White" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Grid>
+</Window>
